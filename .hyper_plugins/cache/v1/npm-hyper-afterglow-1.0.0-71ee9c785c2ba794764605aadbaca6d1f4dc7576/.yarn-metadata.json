@@ -1,0 +1,44 @@
+{
+  "manifest": {
+    "name": "hyper-afterglow",
+    "version": "1.0.0",
+    "description": "The theme for Hyper based on Afterglow Theme for Sublime Text.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "hyper",
+      "hyperterm",
+      "afterglow"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/andooown/hyper-afterglow.git"
+    },
+    "author": {
+      "name": "andooown",
+      "email": "andooown.dev@gmail.com"
+    },
+    "license": "MIT",
+    "devDependencies": {
+      "prettier": "1.15.3"
+    },
+    "_registry": "npm",
+    "_loc": "/Users/rmiles/.hyper_plugins/cache/v1/npm-hyper-afterglow-1.0.0-71ee9c785c2ba794764605aadbaca6d1f4dc7576/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# hyper-afterglow\n[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)\n\nThis is the theme for [Hyper](https://hyper.is/) based on [Afterglow Theme for Sublime Text](https://github.com/YabataDesign/afterglow-theme).\n\n![Screenshot](https://github.com/andooown/hyper-afterglow/raw/images/screenshot.png)\n\n## Installation\nEdit your `~/.hyper.js` and add `hyper-afterglow` to `plugins: []` array.\n\n```\n...\nplugins: [\n  'hyper-afterglow'\n]\n...\n```\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2018 Yoshikazu Ando\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyper-afterglow/-/hyper-afterglow-1.0.0.tgz#71ee9c785c2ba794764605aadbaca6d1f4dc7576",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyper-afterglow/-/hyper-afterglow-1.0.0.tgz",
+    "hash": "71ee9c785c2ba794764605aadbaca6d1f4dc7576",
+    "registry": "npm",
+    "packageName": "hyper-afterglow"
+  },
+  "registry": "npm",
+  "hash": "71ee9c785c2ba794764605aadbaca6d1f4dc7576"
+}
