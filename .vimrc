@@ -32,7 +32,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " enable status line always
 set laststatus=2
 
-hi CursorLine ctermbg=17
+"hi CursorLine ctermbg=124
 " hi CursorColumn ctermbg=237
 hi StatusLine ctermbg=245
 hi StatusLine ctermfg=white
@@ -87,6 +87,8 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'burnettk/vim-angular'
 Plugin 'pangloss/vim-javascript'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-theme'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -135,4 +137,5 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 
-
+" Airline customization
+let g:airline#extensions#branch#displayed_head_limit = 8
