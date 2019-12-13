@@ -24,13 +24,16 @@ set backspace=indent,eol,start
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 " set list
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/autoload/ctrlp.vim
+set runtimepath+=/usr/local/opt/fzf
+
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+" set rtp+=~/.vim/bundle/Vundle.vim
 
 " enable status line always
 set laststatus=2
+
 
 "hi CursorLine ctermbg=124
 " hi CursorColumn ctermbg=237
@@ -48,6 +51,7 @@ endif
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor\ --column 
+  "set g:ackprg = 'ag --nogroup --nocolor --column' 
   set grepformat=%f:%l:%c%m
   
 "  nmap <silent> <RIGHT> :cnext<CR>
@@ -57,6 +61,7 @@ if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
+" set rtp+=/usr/local/opt/fzf
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 
@@ -64,47 +69,27 @@ if executable('ag')
   nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
 
-call vundle#begin()
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-Plugin 'wincent/command-t'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'burnettk/vim-angular'
-Plugin 'pangloss/vim-javascript'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-theme'
-
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
-Plugin 'thoughtbot/vim-rspec'
+call plug#begin('~/.vim/plugged')
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'wincent/command-t'
+Plug 'leafgarland/typescript-vim'
+Plug 'burnettk/vim-angular'
+Plug 'pangloss/vim-javascript'
+Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-theme'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'thoughtbot/vim-rspec'
+Plug '/usr/local/opt/fzf'
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()            " required
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -139,3 +124,6 @@ let g:javascript_plugin_ngdoc = 1
 
 " Airline customization
 let g:airline#extensions#branch#displayed_head_limit = 8
+
+nnoremap F :FZF<CR>
+nnoremap <C-q> :FZF<CR>
