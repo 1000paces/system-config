@@ -1,0 +1,46 @@
+{
+  "manifest": {
+    "name": "hyper-oceanic-next",
+    "version": "0.0.2",
+    "description": "Oceanic Next theme for Hyper",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/robinbentley/hyper-oceanic-next.git"
+    },
+    "keywords": [
+      "hyper",
+      "hyper-theme",
+      "colors",
+      "oceanic-next"
+    ],
+    "author": {
+      "name": "Robin Bentley",
+      "email": "robinbentley@me.com"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/robinbentley/hyper-oceanic-next/issues"
+    },
+    "homepage": "https://github.com/robinbentley/hyper-oceanic-next#readme",
+    "_registry": "npm",
+    "_loc": "/Users/rmiles/.hyper_plugins/cache/v1/npm-hyper-oceanic-next-0.0.2-368351ddac8dd4277cba8ce1c74175946fbff2ac/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Oceanic Next for Hyper\n\n[Hyper](https://hyper.is/) theme based on the awesome [Oceanic Next](https://github.com/voronianski/oceanic-next-color-scheme) by [Dmitri Voronianski](https://github.com/voronianski).\n\n![screenshot](https://user-images.githubusercontent.com/2156395/39154561-8aa8cb0c-4746-11e8-8710-2284e702e68d.png)\n\n## Installing\n\nAdd `hyper-oceanic-next` to your `plugins` in preferences \n\n_or_\n\nUse the command `hyper install hyper-oceanic-next`\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2018 Robin Bentley <robinbentley@me.com>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyper-oceanic-next/-/hyper-oceanic-next-0.0.2.tgz#368351ddac8dd4277cba8ce1c74175946fbff2ac",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyper-oceanic-next/-/hyper-oceanic-next-0.0.2.tgz",
+    "hash": "368351ddac8dd4277cba8ce1c74175946fbff2ac",
+    "registry": "npm",
+    "packageName": "hyper-oceanic-next"
+  },
+  "registry": "npm",
+  "hash": "368351ddac8dd4277cba8ce1c74175946fbff2ac"
+}

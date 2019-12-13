@@ -14,8 +14,10 @@ export PATH="/usr/local/opt/qt5/bin:$PATH"
 
  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
+#export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
 
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+alias ssh_staging="ssh -i ~/.ssh/1kp.pem ubuntu@staging.flexjobs.com"

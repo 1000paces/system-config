@@ -1,0 +1,45 @@
+{
+  "manifest": {
+    "name": "hyper-relaxed",
+    "version": "1.0.7",
+    "description": "A relaxed theme to take a more relaxed view of things.",
+    "main": "index.js",
+    "files": [
+      "index.js"
+    ],
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/mischah/relaxed.git"
+    },
+    "keywords": [
+      "hyper",
+      "theme",
+      "hyperterm",
+      "hyper.app",
+      "relaxed"
+    ],
+    "author": {
+      "name": "Michael Kühnel"
+    },
+    "license": "MIT",
+    "_registry": "npm",
+    "_loc": "/Users/rmiles/.hyper_plugins/cache/v1/npm-hyper-relaxed-1.0.7-c2f00be45369894c632331002a3cd4136ddb7613/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "[![npm](https://img.shields.io/npm/dm/hyper-relaxed.svg?label=hyper-relaxed&nbsp;downloads)](https://www.npmjs.com/package/hyper-relaxed)\n\n# Relaxed\n\n> A relaxed terminal theme to take a more relaxed view of things. For iTerm, Hyper, the macOS Terminal and a bunch of others.\n\nAvailable for:\n\n- [Hyper](#hyper)\n- [iTerm](#iterm)\n- [Terminal](#terminal)\n- [Additional formats](#additional-formats) (Konsole, PuTTY, Terminator, Termite, Xfce Terminal, Xresources)\n\nThe theme only provides the colors. Please note additional usages in the screenshots: [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh), [Bullet Train for Oh My Zsh](https://github.com/caiogondim/bullet-train.zsh) and [Source Code Pro for Powerline](https://github.com/powerline/fonts/blob/master/SourceCodePro/Source%20Code%20Pro%20for%20Powerline.otf)\n\n#### Relaxing your editor:\n\n* [Relaxed Theme for Atom](https://github.com/Relaxed-Theme/atom-relaxed-syntax)\n* [Relaxed Theme for Visual Studio Code](https://github.com/Relaxed-Theme/vscode-theme-relaxed)\n\n## Hyper\n\nThe theme should be compatible with [Hyper](https://hyper.is/) 1.x and 2.x.\n\n![Screenshot](screenshots/hyper.png)\n\n### Installation\n\nOpen your `~/.hyper.js` file (Hyper > Preferences) and add `hyper-relaxed` to the `plugins: []` array and save the file.\n\n```js\n…\nplugins: ['hyper-relaxed'],\n…\n```\n\n**Note:**\n\nThat’s really all you have to do. Hyper loads the plugin from the npm registry and reloads itself.\n\n## iTerm\n\nThe theme should be compatible with all [iTerm2](https://iterm2.com/) versions.\n\n![Screenshot](screenshots/iterm.png)\n\n### Installation\n\nDownload [Relaxed.itermcolors](https://gitcdn.link/repo/mischah/Relaxed/master/themes/Relaxed.itermcolors). Double click to import into iTerm.\n\n**Note:**\n\n- You can change the themes via\n  - `iTerm > Preferences > Profiles > [Profile Name] > Colors > Color Presets…`\n\n## Terminal\n\nThe theme should be compatible with all Terminal versions.\n\n![Screenshot](screenshots/terminal.png)\n\n### Installation\n\nDownload [Relaxed.terminal](https://gitcdn.link/repo/mischah/Relaxed/master/themes/Relaxed.terminal). Double click to import into Terminal.\n\n**Note:**\n\n- Set the theme as default theme\n  - via `Terminal > Preferences > Profile > Standard`\n- Make sure to that new Terminal windows and tabs are openend with this theme\n  - via `Terminal > Preferences > General`\n\n### Additional formats\n\n- [Konsole](https://gitcdn.link/repo/mischah/Relaxed/master/themes/Relaxed.colorscheme)\n- [PuTTY](https://gitcdn.link/repo/mischah/Relaxed/master/themes/Relaxed.reg)\n- [Terminator](https://gitcdn.link/repo/mischah/Relaxed/master/themes/Relaxed.config)\n- [Termite](https://gitcdn.link/repo/mischah/Relaxed/master/themes/Relaxed)\n- [Xfce Terminal](https://gitcdn.link/repo/mischah/Relaxed/master/themes/Relaxed.theme)\n- [Xresources](https://gitcdn.link/repo/mischah/Relaxed/master/themes/Xresources/Relaxed) (xterm, (u)rxvt, and other X11 applications)\n\n## License\n\nPlease be aware of the licenses of the components we use in this project.\nEverything else that has been developed by the contributions to this project is under [MIT License](LICENSE).\n",
+    "licenseText": "MIT License\n\nCopyright (c) Michael Kühnel <mail@michael-kuehnel.de>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\nof the Software, and to permit persons to whom the Software is furnished to do\nso, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyper-relaxed/-/hyper-relaxed-1.0.7.tgz#c2f00be45369894c632331002a3cd4136ddb7613",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyper-relaxed/-/hyper-relaxed-1.0.7.tgz",
+    "hash": "c2f00be45369894c632331002a3cd4136ddb7613",
+    "registry": "npm",
+    "packageName": "hyper-relaxed"
+  },
+  "registry": "npm",
+  "hash": "c2f00be45369894c632331002a3cd4136ddb7613"
+}
