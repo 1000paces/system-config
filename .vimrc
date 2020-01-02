@@ -24,7 +24,7 @@ set backspace=indent,eol,start
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 " set list
 
-set runtimepath^=~/.vim/autoload/ctrlp.vim
+"set runtimepath^=~/.vim/autoload/ctrlp.vim
 set runtimepath+=/usr/local/opt/fzf
 
 
@@ -56,14 +56,14 @@ if executable('ag')
   
 "  nmap <silent> <RIGHT> :cnext<CR>
 "  nmap <silent> <LEFT> :cprev<CR>
-  nmap <silent> <S-RIGHT> :cnext<CR>
-  nmap <silent> <S-LEFT> :cprev<CR>
+"  nmap <silent> <S-RIGHT> :cnext<CR>
+"  nmap <silent> <S-LEFT> :cprev<CR>
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+"  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " set rtp+=/usr/local/opt/fzf
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+"  let g:ctrlp_use_caching = 0
 
   " bind K to grep word under cursor
   nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -87,6 +87,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'thoughtbot/vim-rspec'
 Plug '/usr/local/opt/fzf'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'dense-analysis/ale'
+Plug 'airblade/vim-gitgutter'
+"Plug 'newclide/coc.nvim, {'tag': '*', 'branch', 'release'}
 " All of your Plugins must be added before the following line
 call plug#end()            " required
 
@@ -100,6 +105,7 @@ filetype plugin indent on    " required
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
+nnoremap <C-q> :FZF<ddCR>
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "
@@ -116,8 +122,8 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 command! E Explore
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
 
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
@@ -125,5 +131,8 @@ let g:javascript_plugin_ngdoc = 1
 " Airline customization
 let g:airline#extensions#branch#displayed_head_limit = 8
 
+nnoremap ; :FZF<CR>
+nnoremap <C-p> :FZF<CR>
 nnoremap F :FZF<CR>
-nnoremap <C-q> :FZF<CR>
+map <C-n> :NERDTreeToggle<CR>
+
