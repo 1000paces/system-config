@@ -6,11 +6,15 @@ colorscheme distinguished
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 
+"automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
 set nocompatible
 set mouse=a
 set relativenumber
 set number
 set ruler
+set clipboard=unnamed
 filetype off
 
 set tabstop=2
@@ -70,6 +74,8 @@ if executable('ag')
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
@@ -87,10 +93,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'thoughtbot/vim-rspec'
 Plug '/usr/local/opt/fzf'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'scrooloose/nerdtree'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
+Plug 'terryma/vim-multiple-cursors'
 "Plug 'newclide/coc.nvim, {'tag': '*', 'branch', 'release'}
 " All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -100,21 +108,38 @@ filetype plugin indent on    " required
 "filetype plugin on
 "
 " Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
+" :PlugList       - lists configured plugins
+" :PlugInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PlugSearch foo - searches for foo; append `!` to refresh local cache
+" :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+nnoremap <C-s> <C-C>
 nnoremap <C-q> :FZF<ddCR>
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "
-
+:let mapleader = " "
 " RSpec.vim mappings
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+let g:rspec_command = "call VtrSendCommand('rspec {spec}')"
+let g:VtrUseVtrMaps = 1
+"nnoremap <leader>or :call VtrOpenRunner()<cr>
+"nnoremap <leader>sl :call VtrSendLinesToRunner()<cr>
+nnoremap <leader>va :VtrAttachToPane<cr>
+nnoremap <leader>ror :VtrReorientRunner<cr>
+nnoremap <leader>sc :VtrSendCommandToRunner<cr>
+nnoremap <leader>sl :VtrSendLinesToRunner<cr>
+vnoremap <leader>sl :VtrSendLinesToRunner<cr>
+nnoremap <leader>or :VtrOpenRunner<cr>
+nnoremap <leader>kr :VtrKillRunner<cr>
+nnoremap <leader>fr :VtrFocusRunner<cr>
+nnoremap <leader>dr :VtrDetachRunner<cr>
+nnoremap <leader>cr :VtrClearRunner<cr>
+nnoremap <leader>fc :VtrFlushCommand<cr>
+nnoremap <leader>sf :VtrSendFile<cr>
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
@@ -131,8 +156,12 @@ let g:javascript_plugin_ngdoc = 1
 " Airline customization
 let g:airline#extensions#branch#displayed_head_limit = 8
 
+"cnoremap kj <C-C>
+"cnoremap jk <C-C>
 nnoremap ; :FZF<CR>
 nnoremap <C-p> :FZF<CR>
 nnoremap F :FZF<CR>
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
 

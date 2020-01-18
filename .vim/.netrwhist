@@ -1,3 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
-let g:netrw_dirhist_1='/Users/rmiles'
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/usr/share/zoneinfo'
+let g:netrw_dirhist_4='/Users/rmiles/1000paces/git/dox-blog-ronald-miles/spec/features'
+let g:netrw_dirhist_3='/Users/rmiles/1000paces/git/dox-blog-ronald-miles/spec'
+let g:netrw_dirhist_2='/Users/rmiles/1000paces/git/dox-blog-ronald-miles/spec/models'
+let g:netrw_dirhist_1='/Users/rmiles/1000paces/git/dox-blog-ronald-miles2/spec/services'
+let g:netrw_dirhist_0='/Users/rmiles/1000paces/git/dox-blog-ronald-miles2/spec'
+let g:netrw_dirhist_9='/Users/rmiles/1000paces/git/dox-blog-ronald-miles2/spec/libs'
+let g:netrw_dirhist_8='/Users/rmiles/1000paces/git/dox-blog-ronald-miles2/spec/controllers'
+let g:netrw_dirhist_7='/Users/rmiles/1000paces/git/dox-blog-ronald-miles2/spec/services'
+let g:netrw_dirhist_6='/Users/rmiles/1000paces/git/dox-blog-ronald-miles2/spec'
