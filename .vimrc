@@ -91,7 +91,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-theme'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plug 'thoughtbot/vim-rspec'
+"Plug 'thoughtbot/vim-rspec'
 Plug '/usr/local/opt/fzf'
 "Plug 'scrooloose/nerdtree'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -99,6 +99,7 @@ Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'janko/vim-test'
 "Plug 'newclide/coc.nvim, {'tag': '*', 'branch', 'release'}
 " All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -128,6 +129,7 @@ let g:rspec_command = "call VtrSendCommand('rspec {spec}')"
 let g:VtrUseVtrMaps = 1
 "nnoremap <leader>or :call VtrOpenRunner()<cr>
 "nnoremap <leader>sl :call VtrSendLinesToRunner()<cr>
+
 nnoremap <leader>va :VtrAttachToPane<cr>
 nnoremap <leader>ror :VtrReorientRunner<cr>
 nnoremap <leader>sc :VtrSendCommandToRunner<cr>
@@ -141,10 +143,20 @@ nnoremap <leader>cr :VtrClearRunner<cr>
 nnoremap <leader>fc :VtrFlushCommand<cr>
 nnoremap <leader>sf :VtrSendFile<cr>
 
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+" rspec test bindings
+" map <Leader>t :call RunCurrentSpecFile()<CR>
+" map <Leader>s :call RunNearestSpec()<CR>
+" map <Leader>l :call RunLastSpec()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>
+
+" minitest bindings
+let test#strategy = "vtr"
+map <leader>n :TestNearest<cr> 
+map <leader>f :TestFile<cr>
+map <leader>s :TestSuite<cr>
+map <leader>l :TestLast<cr>
+map <leader>g :TestVisit<cr>
+
 command! E Explore
 
 "let g:ctrlp_map = '<c-p>'
