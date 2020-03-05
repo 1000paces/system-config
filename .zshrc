@@ -103,8 +103,21 @@ __git_files () {
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias ssh_staging="ssh -i ~/.ssh/1kp.pem ubuntu@staging.flexjobs.com"
+alias ssh_fj_staging="ssh -i ~/.ssh/1kp.pem ubuntu@fj-staging.com"
+alias dc="docker-compose"
 
 eval "$(rbenv init -)"
 
 
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+_not_inside_tmux() { [[ -z "$TMUX" ]] }
+
+ensure_tmux_is_running() {
+  if _not_inside_tmux; then
+    tat
+  fi
+}
+
+ ensure_tmux_is_running
 
