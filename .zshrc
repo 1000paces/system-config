@@ -119,4 +119,4 @@ ensure_tmux_is_running() {
   fi
 }
 
- ensure_tmux_is_running
+ensure_tmux_is_running
