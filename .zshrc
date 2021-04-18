@@ -120,3 +120,13 @@ ensure_tmux_is_running() {
 }
 
 ensure_tmux_is_running
+
+alias rake='noglob rake'
+
+deploy() {
+  DEPLOY_USER=ron cap $1 docker:deploy
+}
+
+tail_logs() {
+  DEPLOY_USER=ron cap $1 docker:logs$2
+}
