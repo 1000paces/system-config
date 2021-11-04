@@ -102,9 +102,9 @@ __git_files () {
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-alias ssh_staging="ssh -i ~/.ssh/1kp.pem ubuntu@staging.flexjobs.com"
-alias ssh_fj_staging="ssh -i ~/.ssh/1kp.pem ubuntu@fj-staging.com"
-alias dc="docker-compose"
+# alias ssh_staging="ssh -i ~/.ssh/1kp.pem ubuntu@staging.flexjobs.com"
+# alias ssh_fj_staging="ssh -i ~/.ssh/1kp.pem ubuntu@fj-staging.com"
+# alias dc="docker-compose"
 
 eval "$(rbenv init -)"
 
