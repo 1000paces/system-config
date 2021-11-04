@@ -2,9 +2,11 @@ filetype plugin indent on
 syntax on
 :set t_Co=256
 "colorscheme cobalt2
+
 colorscheme distinguished
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
+highlight CocFloating ctermbg=black
 
 "automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
@@ -73,6 +75,8 @@ if executable('ag')
   nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
 
+" :source ~/.vimrc to reinitialize vim
+" :PlugInstall to install the new plugins.
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
@@ -80,13 +84,19 @@ Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-haml'
+" Plug 'tpope/vim-haml'
+
+" Plug 'pangloss/vim-javascript'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'peitalin/vim-jsx-typescript'
+" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+" Plug 'jparise/vim-graphql'
+
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'wincent/command-t'
-Plug 'leafgarland/typescript-vim'
 Plug 'burnettk/vim-angular'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline'
@@ -101,7 +111,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'janko/vim-test'
-"Plug 'newclide/coc.nvim, {'tag': '*', 'branch', 'release'}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+
 " All of your Plugins must be added before the following line
 call plug#end()            " required
 
@@ -177,4 +188,15 @@ nnoremap F :FZF<CR>
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-solargraph' ]
 
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()

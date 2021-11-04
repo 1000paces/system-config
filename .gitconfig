@@ -1,9 +1,19 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-  name = Ronald Miles
-  email = ron.miles@1000paces.com
+	name = Ronald Miles
+	email = ron.miles@1000paces.com
 [pager]
 	branch = false
 [alias]
   purge-branches = !"git branch --merged | grep -Ev '\\*|master|develop|staging' | xargs -n 1 git branch -d"
+[core]
+	excludesfile = /Users/rmiles/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/rmiles/.stCommitMsg
