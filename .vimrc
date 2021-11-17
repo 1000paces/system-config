@@ -11,6 +11,7 @@ highlight CocFloating ctermbg=black
 "automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
+set re=0
 set nocompatible
 set mouse=a
 set relativenumber
@@ -31,7 +32,8 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 " set list
 
 "set runtimepath^=~/.vim/autoload/ctrlp.vim
-set runtimepath+=/usr/local/opt/fzf
+"set runtimepath+=/usr/local/opt/fzf
+set runtimepath+=/opt/homebrew/bin/fzf:
 
 
 " set the runtime path to include Vundle and initialize
@@ -95,6 +97,7 @@ Plug 'tpope/vim-surround'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
+"Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'wincent/command-t'
 Plug 'burnettk/vim-angular'
@@ -103,7 +106,7 @@ Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-theme'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Plug 'thoughtbot/vim-rspec'
-Plug '/usr/local/opt/fzf'
+"Plug '/opt/homebrew/opt/fzf'
 "Plug 'scrooloose/nerdtree'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dense-analysis/ale'
@@ -112,6 +115,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'janko/vim-test'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -176,11 +181,14 @@ command! E Explore
 
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
+let g:snipMate = { 'snippet_version' : 1 }
+"let g:snipMate = {}
+"let g:snipMate.scope_aliases = {}
+"let g:snipMate.scope_aliases['ruby'] = 'ruby, ruby-rails'
 
 " Airline customization
 let g:airline#extensions#branch#displayed_head_limit = 8
 
-"cnoremap kj <C-C>
 "cnoremap jk <C-C>
 nnoremap ; :FZF<CR>
 nnoremap <C-p> :FZF<CR>

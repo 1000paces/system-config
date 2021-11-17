@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/homebrew/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/rmiles/.oh-my-zsh"
@@ -106,10 +106,9 @@ __git_files () {
 # alias ssh_fj_staging="ssh -i ~/.ssh/1kp.pem ubuntu@fj-staging.com"
 # alias dc="docker-compose"
 
+export PATH="/opt/homebrew/bin:$PATH"
+
 eval "$(rbenv init -)"
-
-
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
 
@@ -130,3 +129,7 @@ deploy() {
 tail_logs() {
   DEPLOY_USER=ron cap $1 docker:logs$2
 }
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
