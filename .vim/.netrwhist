@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/rmiles/1000paces/git/ies-r2g/config'
+let g:netrw_dirhist_5='/Users/rmiles/1000paces/git/ies-r2g'
 let g:netrw_dirhist_4='/Users/rmiles/1000paces/git/ies-r2g/app/assets/stylesheets'
 let g:netrw_dirhist_3='/Users/rmiles/1000paces/git/ies-r2g/app/assets'
 let g:netrw_dirhist_2='/Users/rmiles/1000paces/git/ies-r2g/app'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_0='/Users/rmiles/1000paces/git/ies-r2g/app'
 let g:netrw_dirhist_9='/Users/rmiles/1000paces/git/ies-r2g'
 let g:netrw_dirhist_8='/Users/rmiles/1000paces/git/ies-r2g/config'
 let g:netrw_dirhist_7='/Users/rmiles/1000paces/git/ies-r2g/config/initializers'
-let g:netrw_dirhist_6='/Users/rmiles/1000paces/git/ies-r2g/app/models/concerns'
-let g:netrw_dirhist_5='/Users/rmiles/1000paces/git/ies-r2g/app/models'

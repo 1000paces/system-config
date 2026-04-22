@@ -6,9 +6,10 @@
 [pager]
 	branch = false
 [alias]
-  purge-branches = !"git branch --merged | grep -Ev '\\*|master|develop|staging' | xargs -n 1 git branch -d"
+  purge-branches = !"git branch --merged | grep -Ev '\\*|main|master|develop|staging' | xargs -n 1 git branch -d"
 [core]
 	excludesfile = /Users/rmiles/.gitignore_global
+	editor = nvim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -17,3 +18,5 @@
 	trustExitCode = true
 # [commit]
 # 	template = /Users/rmiles/.stCommitMsg
+[rerere]
+	enabled = true

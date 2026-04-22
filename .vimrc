@@ -1,12 +1,16 @@
 filetype plugin indent on
 syntax on
+" syntax enable
+set background=dark
 :set t_Co=256
-"colorscheme cobalt2
 
+" colorscheme cobalt2
 colorscheme distinguished
+" colorscheme twilight
+
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
-highlight CocFloating ctermbg=black
+highlight NormalFloat ctermbg=black
 
 "automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
@@ -27,9 +31,13 @@ set cursorline
 " set cursorcolumn
 set nowrap
 set backspace=indent,eol,start
+set completeopt=menu,menuone,noselect
 
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 " set list
+
+set ignorecase
+set smartcase
 
 "set runtimepath^=~/.vim/autoload/ctrlp.vim
 "set runtimepath+=/usr/local/opt/fzf
@@ -77,10 +85,17 @@ if executable('ag')
   nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
 
+
+let g:copilot_no_tab_map = v:true
+let g:codeium_no_map_tab = 1
+
+" let g:augment_workspace_folders = ['/Users/rmiles/1000paces/git/ies-r2g']
+
 " :source ~/.vimrc to reinitialize vim
 " :PlugInstall to install the new plugins.
 call plug#begin('~/.vim/plugged')
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'Mofiqul/vscode.nvim'
+Plug 'christoomey/vim-tmuX-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
@@ -97,7 +112,6 @@ Plug 'tpope/vim-surround'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
-"Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'wincent/command-t'
 Plug 'burnettk/vim-angular'
@@ -114,12 +128,44 @@ Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'janko/vim-test'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+" Plug 'CoderCookE/vim-chatgpt'
+" https://github.com/CoderCookE/vim-chatgpt.git
+" Plug 'Exafunction/windsurf.vim'
+" Plug 'augmentcode/augment.vim'
+" Plug 'github/copilot.vim'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'CopilotC-Nvim/CopilotChat.nvim'
+" Plug 'greggh/claude-code.nvim'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
+
+lua require('vscode').load('dark')
+" lua << EOF
+"   require("CopilotChat").setup()
+" EOF
+
+imap <script><silent><nowait><expr> <C-g> codeium#Accept()
+
+" lua << EOF
+"   require('claude-code').setup({
+"     window = {
+"       split_ratio = 0.3,
+"       position = "botright",
+"       enter_insert = true,
+"     },
+"     keymaps = {
+"       toggle = {
+"         normal = "<C-,>",
+"         terminal = "<C-,>",
+"       }
+"     }
+"   })
+" EOF
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -134,7 +180,7 @@ nnoremap <C-s> <C-C>
 nnoremap <C-q> :FZF<ddCR>
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-"
+
 :let mapleader = " "
 " RSpec.vim mappings
 nnoremap <C-J> <C-W><C-J>
@@ -142,8 +188,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+let g:openai_api_key='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'
 let g:rspec_command = "call VtrSendCommand('rspec {spec}')"
 let g:VtrUseVtrMaps = 1
+
 "nnoremap <leader>or :call VtrOpenRunner()<cr>
 "nnoremap <leader>sl :call VtrSendLinesToRunner()<cr>
 
@@ -175,6 +223,15 @@ map <leader>l :TestLast<cr>
 map <leader>g :TestVisit<cr>
 
 command! E Explore
+" command! -nargs=* A Augment <args>
+" command! Ac Augment chat
+command CC Codeium Chat
+" command! -nargs=0 CC ClaudeCode
+" command! -nargs=0 CC CopilotChat
+" command! -nargs=0 CCT CopilotChatToggle
+" command! -nargs=0 CCO CopilotChatOpen 
+" command! -nargs=0 CCL CopilotChatLoad
+
 
 "let g:ctrlp_map = '<c-p>'
 "let g:ctrlp_cmd = 'CtrlP'
@@ -182,12 +239,20 @@ command! E Explore
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:snipMate = { 'snippet_version' : 1 }
-"let g:snipMate = {}
-"let g:snipMate.scope_aliases = {}
-"let g:snipMate.scope_aliases['ruby'] = 'ruby, ruby-rails'
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['eruby'] = 'eruby,eruby-rails'
+
+" Chat GPT options
+let g:chat_gpt_max_tokens=2000
+let g:chat_gpt_model='gpt-4'
+let g:chat_gpt_session_mode=1
+let g:chat_gpt_temperature = 0.7
+" let g:chat_gpt_lang = 'Chinese'
+let g:chat_gpt_split_direction = 'vertical'
 
 " Airline customization
 let g:airline#extensions#branch#displayed_head_limit = 8
+let g:airline#extensions#nvimlsp#enabled = 0
 
 "cnoremap jk <C-C>
 nnoremap ; :FZF<CR>
@@ -196,15 +261,4 @@ nnoremap F :FZF<CR>
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-solargraph' ]
-
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+lua require('lsp')
