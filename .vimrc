@@ -87,7 +87,7 @@ endif
 
 
 let g:copilot_no_tab_map = v:true
-let g:codeium_no_map_tab = 1
+" let g:codeium_no_map_tab = 1
 
 " let g:augment_workspace_folders = ['/Users/rmiles/1000paces/git/ies-r2g']
 
@@ -136,7 +136,7 @@ Plug 'junegunn/fzf.vim'
 " https://github.com/CoderCookE/vim-chatgpt.git
 " Plug 'Exafunction/windsurf.vim'
 " Plug 'augmentcode/augment.vim'
-" Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 " Plug 'nvim-lua/plenary.nvim'
 " Plug 'CopilotC-Nvim/CopilotChat.nvim'
 " Plug 'greggh/claude-code.nvim'
@@ -149,7 +149,7 @@ lua require('vscode').load('dark')
 "   require("CopilotChat").setup()
 " EOF
 
-imap <script><silent><nowait><expr> <C-g> codeium#Accept()
+imap <silent><script><expr> <Right> copilot#Accept("\<Right>")
 
 " lua << EOF
 "   require('claude-code').setup({
@@ -225,7 +225,7 @@ map <leader>g :TestVisit<cr>
 command! E Explore
 " command! -nargs=* A Augment <args>
 " command! Ac Augment chat
-command CC Codeium Chat
+" command CC Codeium Chat
 " command! -nargs=0 CC ClaudeCode
 " command! -nargs=0 CC CopilotChat
 " command! -nargs=0 CCT CopilotChatToggle
@@ -261,4 +261,4 @@ nnoremap F :FZF<CR>
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
-lua require('lsp')
+" lua require('lsp')
