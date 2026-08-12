@@ -145,6 +145,17 @@ Plug 'github/copilot.vim'
 call plug#end()            " required
 
 lua require('vscode').load('dark')
+
+" make the active split obvious, matching tmux's active/inactive pane colors
+highlight Normal guibg=#212121
+highlight NormalNC guibg=#2a2a2a
+
+" dim the active split too when the tmux pane itself loses focus
+augroup TmuxPaneFocus
+  autocmd!
+  autocmd FocusLost * highlight Normal guibg=#2a2a2a
+  autocmd FocusGained * highlight Normal guibg=#212121
+augroup END
 " lua << EOF
 "   require("CopilotChat").setup()
 " EOF
@@ -262,3 +273,5 @@ nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
 " lua require('lsp')
+
+let g:ale_linters_ignore = {'ruby': ['solargraph']}

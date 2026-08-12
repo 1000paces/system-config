@@ -165,6 +165,7 @@ function my_work() {
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 _accept_suggestion_or_forward() {
@@ -314,3 +315,4 @@ export PATH="$HOME/.local/bin:$PATH"
 
 eval "$(rbenv init -)"
 
+alias python=python3
